@@ -1,0 +1,47 @@
+
+.s1{
+    margin-left: 32%;
+    margin-right: 32%;
+    margin-top: 5%;
+}
+.s2{
+    margin-top: 2%;
+    text-align: center;
+    opacity: 0.85;
+    font-family: OpenSansBold;
+    font-size: 220%;
+    color: #FFFFFF;
+    letter-spacing: 0.2px;
+}
+.s3{
+    text-align: center;
+    margin-left: 45%;
+    margin-right: 45%;
+    margin-top: 2%;
+    padding: 0.5%;
+    opacity: 0.85;
+    background: #FFFFFF;
+    border-radius: 4px;
+}
+
+img{
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+    font-family: OpenSansBold;
+    font-size: 120%;
+    color: #1C7430;
+    letter-spacing: 0;
+}
+@font-face {
+			font-family: "OpenSansBold";
+			src: url("../fonts/OpenSansBold/OpenSansBold.eot");
+			src: url("../fonts/OpenSansBold/OpenSansBold.eot?#iefix")format("embedded-opentype"),
+			url("../fonts/OpenSansBold/OpenSansBold.woff") format("woff"),
+			url("../fonts/OpenSansBold/OpenSansBold.ttf") format("truetype");
+			font-style: normal;
+			font-weight: normal;
+	}
+
