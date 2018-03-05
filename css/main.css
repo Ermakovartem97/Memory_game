@@ -5,6 +5,7 @@
     margin-top: 5%;
 }
 .s2{
+    text-align: center;
     margin-top: 2%;
     opacity: 0.85;
     font-family: OpenSansBold;
@@ -13,29 +14,53 @@
     letter-spacing: 0.2px;
 }
 .s3{
+    text-align: center;
     margin-left: 45%;
     margin-right: 45%;
     margin-top: 2%;
-    padding: 0.5%;
     opacity: 0.85;
     background: #FFFFFF;
     border-radius: 4px;
 }
-div{
-    text-align: center;
-}
 div img{
     max-width: 100%;
 }
-
 a{
+    text-decoration: none;
+    color: #FFFFFF;
+}
+
+.s4{
+    padding: 10px 10px;
+    display: block;
     font-size: 1vw;
     max-height: 100%;
-    text-decoration: none;
     font-family: OpenSansBold;
     color: #1C7430;
     letter-spacing: 0;
 }
+
+.s5{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+    font-family: OpenSansBold;
+    color: #FFFFFF;
+    width: 60%;
+}
+
+.s6 {
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*tr img{*/
+    /*width: 50%;*/
+    /*height: 50%;*/
+/*}*/
+
 @font-face {
 			font-family: "OpenSansBold";
 			src: url("../fonts/OpenSansBold/OpenSansBold.eot");
