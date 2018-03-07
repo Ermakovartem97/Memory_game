@@ -2,40 +2,32 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <script src="game_logic.js"></script>
     <title>Memory game</title>
+
+    <style>
+div#memory_board > div{
+	background: url(images/cards/0C.png) no-repeat;
+    background-size: 100%;
+    min-width: 15%;
+	max-width: 15%;
+    min-height: 22%;
+    max-height: 22%;
+    margin: 2px;
+	float:left;
+	cursor:pointer;
+}
+</style>
+
 </head>
 <body bgcolor="#1b692d">
 <table class="s5">
     <tr>
         <td><a href="index.html">Новая игра</a></td>
-        <td align="right" class="s6">Очки:</td>
+        <td align="right">Очки:</td>
     </tr>
 </table>
-<table class="s6">
-    <tr>
-        <td><img src="images/cards/0C.png"></td>
-        <td><img src="images/cards/0D.png"></td>
-        <td><img src="images/cards/0H.png"></td>
-        <td><img src="images/cards/0S.png"></td>
-        <td><img src="images/cards/2C.png"></td>
-        <td><img src="images/cards/2D.png"></td>
-    </tr>
-    <tr>
-        <td><img src="images/cards/2C.png"></td>
-        <td><img src="images/cards/2D.png"></td>
-        <td><img src="images/cards/2H.png"></td>
-        <td><img src="images/cards/2S.png"></td>
-        <td><img src="images/cards/2C.png"></td>
-        <td><img src="images/cards/2D.png"></td>
-    </tr>
-    <tr>
-        <td><img src="images/cards/2C.png"></td>
-        <td><img src="images/cards/2D.png"></td>
-        <td><img src="images/cards/2H.png"></td>
-        <td><img src="images/cards/2S.png"></td>
-        <td><img src="images/cards/2C.png"></td>
-        <td><img src="images/cards/2D.png"></td>
-    </tr>
-</table>
+<div id="memory_board"></div>
+<script>newBoard()</script>
 </body>
 </html>
