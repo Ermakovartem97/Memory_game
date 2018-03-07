@@ -2,6 +2,7 @@ var memory_array = ['0C','0D','0H','0S','2C','2D','2H','2S','3C','3D','3H','3S',
 var memory_values = [];
 var memory_tile_ids = [];
 var tiles_flipped = 0;
+
 Array.prototype.memory_tile_shuffle = function(){
     var i = this.length, j, temp;
     while(--i > 0){
@@ -12,12 +13,23 @@ Array.prototype.memory_tile_shuffle = function(){
     }
 }
 
+function map(arr) {
+    let napp = [];
+        for (let i = 0; i<arr.length/6; i++){
+            napp.push(arr[i]);
+        }
+            return napp;
+}
+
 function newBoard(){
 	tiles_flipped = 0;
 	var output = '';
-    memory_array.memory_tile_shuffle();
+	memory_array.memory_tile_shuffle();
+	var arr = map(memory_array)
+	let Cards =arr.concat(arr)
+	Cards.memory_tile_shuffle()
 	for(var i = 0; i < 18; i++){
-		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+memory_array[i]+'\')"></div>';
+		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+Cards[i]+'\')"></div>';
 	}
 	document.getElementById('memory_board').innerHTML = output;
 }
@@ -47,9 +59,9 @@ function memoryFlipTile(tile,val){
 				    // Flip the 2 tiles back over
 				    var tile_1 = document.getElementById(memory_tile_ids[0]);
 				    var tile_2 = document.getElementById(memory_tile_ids[1]);
-				    tile_1.style.background = 'url(tile_bg.jpg) no-repeat';
+				    tile_1.style.backgroundImage = 'url(images/cards/back.png)';
             	    tile_1.innerHTML = "";
-				    tile_2.style.background = 'url(tile_bg.jpg) no-repeat';
+				    tile_2.style.backgroundImage = 'url(images/cards/back.png)';
             	    tile_2.innerHTML = "";
 				    // Clear both arrays
 				    memory_values = [];
