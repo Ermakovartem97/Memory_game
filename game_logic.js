@@ -24,8 +24,7 @@ function newBoard(){
 
 function memoryFlipTile(tile,val){
 	if(tile.innerHTML == "" && memory_values.length < 2){
-		tile.style.backgroundImage = url(image/cards/'val'.png) ;
-		tile.innerHTML = val;
+		tile.style.backgroundImage = 'url(images/cards/'+ val +'.png)' ;
 		if(memory_values.length == 0){
 			memory_values.push(val);
 			memory_tile_ids.push(tile.id);
