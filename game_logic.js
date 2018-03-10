@@ -25,8 +25,10 @@ function map(arr) {
 function clear_cards(a) {
 	document.getElementById(a[0]).style.background = 'transparent';
 	document.getElementById(a[0]).onclick = '';
+	document.getElementById(a[0]).style.cursor = 'default';
 	document.getElementById(a[1]).style.background = 'transparent';
 	document.getElementById(a[1]).onclick = '';
+	document.getElementById(a[1]).style.cursor = 'default';
 }
 
 
@@ -40,11 +42,16 @@ function newBoard(){
 	let Cards =arr.concat(arr);
 	Cards.memory_tile_shuffle();
 	for(var i = 0; i < 18; i++){
-		output += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+Cards[i]+'\')"></div>';
-		output2 += '<div background = "url(images/cards/" +Cards[i]+ ".png) no-repeat";></div>';
+		output += '<div style="background: url(images/cards/'+Cards[i]+'.png) no-repeat;background-size: 100%;"></div>';
+		output2 += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+Cards[i]+'\')"></div>';
 	}
-	// document.getElementById('memory_board').innerHTML = output2;
+
 	document.getElementById('memory_board').innerHTML = output;
+
+    function stop_look() {
+		document.getElementById('memory_board').innerHTML = output2;
+    }
+    setTimeout(stop_look,3500);
 }
 
 function memoryFlipTile(tile,val){
@@ -58,19 +65,21 @@ function memoryFlipTile(tile,val){
 			memory_tile_ids.push(tile.id);
 
 			if(memory_values[0] == memory_values[1]){
-				tiles_flipped += 2;
-				score += (18 - tiles_flipped) * 42;
-				var Score_line = '<td align="right">Очки: '+ score +'</td>';
-				document.getElementById('score').innerHTML = Score_line;
-				clear_cards(memory_tile_ids);
-				memory_values = [];
-            	memory_tile_ids = [];
+				function clear2Back() {
+					tiles_flipped += 2;
+					score += (18 - tiles_flipped) * 42;
+					var Score_line = '<td align="right">Очки: '+ score +'</td>';
+					document.getElementById('score').innerHTML = Score_line;
+					clear_cards(memory_tile_ids);
+					memory_values = [];
+					memory_tile_ids = [];
 
-				if(tiles_flipped == 18){
-					alert("Your score is " + score);
-					document.location.href = "score.html";
-					document.getElementById('result').innerHTML = score;
+					if(tiles_flipped == 18){
+						alert("Your score is " + score);
+						document.location.href = "score.html";
+					}
 				}
+				setTimeout(clear2Back, 700);
 			} else {
 				function flip2Back(){
 				    // Flip the 2 tiles back over
