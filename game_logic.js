@@ -15,8 +15,8 @@ Array.prototype.memory_tile_shuffle = function(){
 };
 
 function map(arr) {
-    let napp = [];
-        for (let i = 0; i<arr.length/6; i++){
+    var napp = [];
+        for (var i = 0; i<arr.length/6; i++){
             napp.push(arr[i]);
         }
             return napp;
@@ -24,7 +24,7 @@ function map(arr) {
 
 function clear_cards(a) {
 	document.getElementById(a[0]).style.background = 'transparent';
-	document.getElementById(a[0]).onclick = '';
+	document.getElementById(a[0]).onclick = "";
 	document.getElementById(a[0]).style.cursor = 'default';
 	document.getElementById(a[1]).style.background = 'transparent';
 	document.getElementById(a[1]).onclick = '';
@@ -41,11 +41,11 @@ function newBoard(){
 	var output2 = '';
 	memory_array.memory_tile_shuffle();
 	var arr = map(memory_array);
-	let Cards =arr.concat(arr);
+	var Cards =arr.concat(arr);
 	Cards.memory_tile_shuffle();
 	for(var i = 0; i < 18; i++){
-		output += '<div style="background: url(images/cards/'+Cards[i]+'.png) no-repeat;background-size: 100%;"></div>';
-		output2 += '<div id="tile_'+i+'" onclick="memoryFlipTile(this,\''+Cards[i]+'\')"></div>';
+		output += '<div data-tid="Card-flipped" style="background: url(images/cards/'+Cards[i]+'.png) no-repeat;background-size: 100%;"></div>';
+		output2 += '<div data-tid="Card" id="tile_'+i+'" onclick="memoryFlipTile(this,\''+Cards[i]+'\')"></div>';
 	}
 
 	document.getElementById('memory_board').innerHTML = output;
@@ -59,6 +59,7 @@ function newBoard(){
 function memoryFlipTile(tile,val){
 	if(memory_values.length < 2){
 		tile.style.backgroundImage = 'url(images/cards/'+ val +'.png)' ;
+		tile.dataset.tid = "Card-flipped";
 		if(memory_values.length == 0){
 			memory_values.push(val);
 			memory_tile_ids.push(tile.id);
@@ -90,7 +91,9 @@ function memoryFlipTile(tile,val){
 				    var tile_1 = document.getElementById(memory_tile_ids[0]);
 				    var tile_2 = document.getElementById(memory_tile_ids[1]);
 				    tile_1.style.backgroundImage = 'url(images/cards/back.png)';
+				    tile_1.dataset.tid = "Card";
 				    tile_2.style.backgroundImage = 'url(images/cards/back.png)';
+				    tile_2.dataset.tid = "Card";
 				    memory_values = [];
             	    memory_tile_ids = [];
 				}

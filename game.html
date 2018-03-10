@@ -25,13 +25,13 @@
 </style>
 </head>
 <body bgcolor="#1b692d">
-<table class="s5">
+<table class="game_band">
     <tr >
-        <td><a href="index.html">Новая игра</a></td>
-        <td id="score" align="right">Очки: 0</td>
+        <td data-tid="Menu-newGame"><a href="index.html">Новая игра</a></td>
+        <td data-tid="Menu-scores" id="score" align="right">Очки: 0</td>
     </tr>
 </table>
-<div id="memory_board"></div>
+<div data-tid="Deck" id="memory_board"></div>
 <script>newBoard()</script>
 </body>
 </html>

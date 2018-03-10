@@ -2,19 +2,19 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/main.css" />
-    <title>Scores</title>
+    <title>Memory game</title>
 </head>
 <body bgcolor="#1b692d">
 
-<div class="s1">
+<div class="main_image">
     <img src="images/Group%202@2x.png">
 </div>
 
-<div class="s2">
+<div class="big_text">
     <b>Поздравляем!</b>
 </div>
 
-<div class="s2" style="margin-top: 0%">
+<div class="big_text" style="margin-top: 0%">
     <b id = "result" ></b>
 </div>
 
@@ -23,8 +23,8 @@
     document.getElementById("result").innerHTML = "Ваш итоговый счёт: "+ x ;
 </script>
 
-<div class="s3">
-    <a href="index.html" class="s4">Ещё раз</a>
+<div data-tid="EndGame-retryGame" class="button_ng">
+    <a href="index.html" class="button_text">Ещё раз</a>
 </div>
 
 </body>
