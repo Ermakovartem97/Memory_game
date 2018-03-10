@@ -14,9 +14,14 @@
     <b>Поздравляем!</b>
 </div>
 
-<div class="s2">
-    <b id = "result" > score </b>
+<div class="s2" style="margin-top: 0%">
+    <b id = "result" ></b>
 </div>
+
+<script>
+    var x = localStorage.getItem("par");
+    document.getElementById("result").innerHTML = "Ваш итоговый счёт: "+ x ;
+</script>
 
 <div class="s3">
     <a href="index.html" class="s4">Ещё раз</a>

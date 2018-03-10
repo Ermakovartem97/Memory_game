@@ -33,6 +33,8 @@ function clear_cards(a) {
 
 
 
+
+
 function newBoard(){
 	tiles_flipped = 0;
 	var output = '';
@@ -75,14 +77,13 @@ function memoryFlipTile(tile,val){
 					memory_tile_ids = [];
 
 					if(tiles_flipped == 18){
-						alert("Your score is " + score);
+						localStorage.setItem("par",score);
 						document.location.href = "score.html";
 					}
 				}
-				setTimeout(clear2Back, 700);
+				setTimeout(clear2Back, 600);
 			} else {
 				function flip2Back(){
-				    // Flip the 2 tiles back over
 					score -= tiles_flipped * 42;
 					var Score_line = '<td align="right">Очки: '+ score +'</td>';
 					document.getElementById('score').innerHTML = Score_line;
@@ -90,11 +91,10 @@ function memoryFlipTile(tile,val){
 				    var tile_2 = document.getElementById(memory_tile_ids[1]);
 				    tile_1.style.backgroundImage = 'url(images/cards/back.png)';
 				    tile_2.style.backgroundImage = 'url(images/cards/back.png)';
-				    // Clear both arrays
 				    memory_values = [];
             	    memory_tile_ids = [];
 				}
-				setTimeout(flip2Back, 700);
+				setTimeout(flip2Back, 600);
 			}
 		}
 	}
